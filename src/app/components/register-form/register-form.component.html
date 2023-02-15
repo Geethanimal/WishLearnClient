@@ -1,0 +1,141 @@
+<div class="container">
+    <form class="p-4 p-md-5 border rounded-3 bg-dark" autocomplete="off" [formGroup]="regForm"
+        (ngSubmit)="submitForm()">
+        <h3 class="text-center mb-5 text-white">Register Here</h3>
+        <div class="row justify-content-center align-items-center g-2">
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="fname" formControlName="fname" placeholder="First Name">
+                    <label for="floatingInput">First Name</label>
+                </div>
+
+                <!-- Validation start-->
+                <div *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="alert alert-danger">
+                    <div *ngIf="fname.errors?.['required']">
+                        First Name is required.
+                    </div>
+                    <div *ngIf="fname.errors?.['minlength']">
+                        First Name must be at least 3 characters long.
+                    </div>
+                </div>
+                <!-- Validation end -->
+
+            </div>
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="lname" formControlName="lname" placeholder="Last Name">
+                    <label for="floatingInput">Last Name</label>
+                </div>
+
+                <!-- Validation start-->
+                <div *ngIf="lname.invalid && (fname.dirty || fname.touched)" class="alert alert-danger">
+                    <div *ngIf="fname.errors?.['required']">
+                        Last Name is required.
+                    </div>
+                    <div *ngIf="fname.errors?.['minlength']">
+                        Last Name must be at least 3 characters long.
+                    </div>
+                </div>
+                <!-- Validation end -->
+            </div>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control " id="Email" formControlName="email" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
+
+        <!-- Validation start-->
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+            <div *ngIf="email.errors?.['required']">
+                Email is required.
+            </div>
+            <div *ngIf="email.errors?.['minlength']">
+                Email must be at least 3 characters long.
+            </div>
+        </div>
+        <!-- Validation end -->
+
+        <div class="form-floating mb-3">
+            <input type="tel" class="form-control" id="PhoneNumber" formControlName="pno" placeholder="Phone Number">
+            <label for="floatingInput">Phone Number</label>
+        </div>
+
+        <!-- Validation start-->
+        <div *ngIf="pno.invalid && (pno.dirty || pno.touched)" class="alert alert-danger">
+            <div *ngIf="pno.errors?.['required']">
+                Phone Number is required.
+            </div>
+            <div *ngIf="pno.errors?.['minlength']">
+                Phone Number must be at least 3 characters long.
+            </div>
+        </div>
+        <!-- Validation end -->
+
+        <div class="form-floating mb-3">
+            <input type="date" class="form-control" id="DOB" formControlName="dob" placeholder="Date of Birth">
+            <label for="floatingInput">Date of birth</label>
+        </div>
+
+        <!-- Validation start-->
+        <div *ngIf="dob.invalid && (dob.dirty || dob.touched)" class="alert alert-danger">
+            <div *ngIf="dob.errors?.['required']">
+                Date of Birth is required.
+            </div>
+            <div *ngIf="dob.errors?.['minlength']">
+                Date of Birth must be at least 3 characters long.
+            </div>
+        </div>
+        <!-- Validation end -->
+
+        <div class="row justify-content-center align-items-center g-2">
+            <div class="col-6">
+                <select class="form-select" formControlName="gender" aria-label="Default select example">
+                    <option selected>Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <select class="form-select" formControlName="type" aria-label="Default select example">
+                    <option selected>Role</option>
+                    <option value="Student">Student</option>
+                    <option value="Teacher">Teacher</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <div class="form-floating mb-3 ">
+                    <input type="password" class="form-control" formControlName="pw" id="Password"
+                        placeholder="Password" required />
+                    <label for="floatingPassword">Password</label>
+                </div>
+            </div>
+
+            <!-- Validation start-->
+            <div *ngIf="pw.invalid && (pw.dirty || pw.touched)" class="alert alert-danger">
+                <div *ngIf="pw.errors?.['required']">
+                    Password is required.
+                </div>
+                <div *ngIf="pw.errors?.['minlength']">
+                    Password must be at least 3 characters long.
+                </div>
+            </div>
+            <!-- Validation end -->
+
+            <div class="col-6">
+                <div class="form-floating mb-3 ">
+                    <input type="password" class="form-control" id="ConfirmPassword" placeholder="Password" required>
+                    <label for="floatingPassword">Confirm Password</label>
+                </div>
+            </div>
+
+        </div>
+        <div class="checkbox mb-3 text-white">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="regForm.invalid">Sign up</button>
+        <hr class="my-4">
+        <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+    </form>
+</div>

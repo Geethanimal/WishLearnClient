@@ -1,0 +1,103 @@
+<div class="container">
+    <div class="container-fluid bg-dark text-white mb-3">
+      <div class="row ">
+        <img alt="abc" class="rounded mx-auto d-block p-0" src="https://i.pinimg.com/736x/39/86/fe/3986fed5bc314b3ea37701b328c2485d--covers-for-facebook-pop-of-color.jpg" width="820px" height="360px"/>
+      </div>
+      <div class="row p-5">
+        <div class="col-4"></div>
+        <div class="col-4">
+          <h2>FirstName Last Name</h2>
+        </div>
+        <div class="col-4"></div>
+      </div>
+    </div>
+    
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                  <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                  <span class="fs-4">Profile</span>
+                </a>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                  <li class="nav-item">
+                    <a routerLink="profile/profile-wall" class="nav-link active" aria-current="page">
+                      <svg class="bi me-2" width="16" height="16"><use xlink:href="profile/profile-wall"></use></svg>
+                      Wall
+                    </a>
+                  </li>
+                  <li>
+                    <a routerLink="/about-profile" class="nav-link text-white">
+                      <svg class="bi me-2" width="16" height="16"><a href="/about-profile"></a></svg>
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/settings-profile" class="nav-link text-white">
+                      <svg class="bi me-2" width="16" height="16"><use xlink:href="/settings-profile"></use></svg>
+                      Settings
+                    </a>
+                  </li>
+                </ul>
+                <hr>
+              </div>
+          </div>
+          <div class="col-6">
+            <app-poster></app-poster>
+          </div>
+          <div class="col-3">
+            <h5 class="text-center">Your Classes</h5>
+            <button class="btn btn-primary +" data-bs-toggle="modal" data-bs-target="#myModal">Create A Class</button>
+            <hr>
+            <app-class-list></app-class-list>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Create a class</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- <form autocomplete="off" [formGroup]="postForm" (ngSubmit)="submitForm()"> -->
+                    <form autocomplete="off">
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="form-floating mt-3 mb-3">
+                            <input type="text" class="form-control" formControlName="title" id="title" placeholder="Enter Title" name="title">
+                            <label for="title">Title</label>
+                        </div>
+                        <div class="form-floating mt-3 mb-3">
+                          <input type="text" class="form-control" formControlName="day" id="day" placeholder="Enter Day: eg:sunday" name="day">
+                          <label for="day">Day</label>
+                        </div>
+                        <div class="form-floating mt-3 mb-3">
+                          <input type="text" class="form-control" formControlName="time" id="time" placeholder="Enter the time" name="title">
+                          <label for="time">Time</label>
+                        </div>
+
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit"  class="btn btn-primary justify-content-center">Post</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="component-fluid">
+    <!-- Chat room Head End -->
+    <div class="bg-dark text-white">
+        <h6 class="text-center p-2 mb-0">Chat-Room</h6>
+    </div>
+    <!-- Chat room Head End -->
+    <!-- Chat room Body start -->
+    <div class="chatroom_body bg-secondary">
+        <ul id="messages" class="pt-2 text-white">
+            <!-- <li class="bg-dark m-3 p-2"><b>Name :</b></li> -->
+        </ul>
+    </div>
+    <!-- Chat room body end -->
+    <!-- Chat room footer -->
+    <div class="bg-dark p-2">
+        <form>
+            <div class="row">
+                <div class="col-10 ">
+                    <input id="input" type="text" class="form-control" placeholder="your message here...">
+                </div>
+                <div class="col-2">
+                    <div class="btn btn-primary"  (click)="sendMessage()">Send</div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <!-- Chat room footer -->
+</div>

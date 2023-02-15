@@ -1,0 +1,8 @@
+.chatroom_body{
+    width: 100%;
+    height: 500px;
+    overflow: scroll;
+}
+li{
+    list-style-type: none;
+}
